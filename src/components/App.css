@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+}
+
+h1 , h3 {
+  text-align: center;
+}
+
+#gameList {
+  grid-template-columns: auto auto;
+}
