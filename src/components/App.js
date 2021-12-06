@@ -1,13 +1,10 @@
 import { useEffect, useState } from "react";
+import HomeScreen from "./HomeScreen";
+import Game from "./Game";
 import './App.css';
 
 export default function App() {
-  const [game, setGame] = useState("");
-
-  function switchToGame(thisGame) {
-    //change to game screen w/ gamestate set to the user-selected game
-    //setGame(thisGame).then()
-  }
+  const [page, setPage] = useState("Home");
 
   //home screen w/ all the game options and nav
   // TODO: change nav to own file?
@@ -15,16 +12,16 @@ export default function App() {
   // TODO: add logic
   return (
     <div>
-      <h1>Welcome to Trivia!</h1>
-      <h2>
-        <button>Categories</button> 
-        <button>About Us</button>
-      </h2>
-      <h3>Pick a category:</h3>
-      <div id="gameList">
-        <button>Animals</button>
-        <button>Movies</button>
-      </div>
+      <button onclock={setPage("Game")}>game</button>
+      {
+        page == "Home" ? 
+          <HomeScreen/> 
+        : page == "Game" ?
+          <Game/>
+        : page == "End" ?
+          <div></div>
+        : <div>Bad Page State</div>
+      }
     </div>
   );
 }
