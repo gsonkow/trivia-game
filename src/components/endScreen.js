@@ -1,6 +1,7 @@
-import "./styles.css";
+import "./App.css";
+import { useEffect, useState } from "react";
 
-export default function endScreen() {
+export default function EndScreen() {
   return (
     <div className="endScreen">
       <h1 id="congrats">Congrats</h1>

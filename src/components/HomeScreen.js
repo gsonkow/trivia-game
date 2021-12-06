@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import './App.css';
 
+
+  //home screen w/ all the game options and nav
+  // TODO: change nav to own file?
+  // TODO: change game options to own file?
 export default function HomeScreen() {
     return (
     <div>
