@@ -5,6 +5,7 @@ import './App.css';
 
 export default function App() {
   const [page, setPage] = useState("Home")
+  const [gameType, setGameType] = useState("");
 
   // TODO: add logic
   return (
@@ -13,11 +14,10 @@ export default function App() {
       <button onClick={() => setPage("End")}>end</button>
       {
         page == "Home" ? 
-          <HomeScreen/> 
+          <HomeScreen setPage={setPage} setGameType={setGameType}/> 
         : page == "Game" ?
           <div>
-           <button onClick={() => setPage("Home")}>Home</button>
-           <Game/>
+           <Game setPage={setPage} gameType={gameType}/>
           </div>
         : page == "End" ?
           <div className="endScreen">
