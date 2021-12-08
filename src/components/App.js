@@ -2,12 +2,9 @@ import { useEffect, useState } from "react";
 import HomeScreen from "./HomeScreen";
 import Game from "./Game";
 import './App.css';
-import EndScreen from "./EndScreen";
 
 export default function App() {
   const [page, setPage] = useState("Home")
-
-
 
   // TODO: add logic
   return (
@@ -18,9 +15,18 @@ export default function App() {
         page == "Home" ? 
           <HomeScreen/> 
         : page == "Game" ?
-          <Game/>
+          <div>
+           <button onClick={() => setPage("Home")}>Home</button>
+           <Game/>
+          </div>
         : page == "End" ?
-          <EndScreen/>
+          <div className="endScreen">
+           <h1 id="congrats">Congrats</h1>
+           <h2 id="score">Score: </h2>
+           <h2 id="score">Personal High Score: </h2>
+            <button onClick={() => setPage("Home")}>Home</button>
+            <button>Play Again</button>
+          </div>
         : <div>Bad Page State</div>
       }
     </div>
