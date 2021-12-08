@@ -5,9 +5,8 @@ import './App.css';
 
 export default function App() {
   const [page, setPage] = useState("Home")
-  const [gameType, setGameType] = useState("");
+  const [gameType, setGameType] = useState(0);
 
-  // TODO: add logic
   return (
     <div>
       <button onClick={() => setPage("Game")}>game</button>

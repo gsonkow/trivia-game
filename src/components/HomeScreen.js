@@ -17,7 +17,7 @@ export default function HomeScreen({ setPage, setGameType }) {
       <div id="gameList">
         <button onClick={() => {
           setPage("Game")
-          setGameType("Sports")
+          setGameType(21)
           }}>Sports</button>
         <button onClick={() => {
           setPage("Game")
