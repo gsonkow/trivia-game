@@ -1,18 +1,31 @@
-export default function Grid() {
+import { useState, useEffect } from "react";
+
+export default function Grid({ answers, setUserClick }) {
   return (
     <div className="answerChoices">
-      <div id="areaA">
-        <button id="buttonA">A</button>
-      </div>
-      <div id="areaB">
-        <button id="buttonB">B</button>
-      </div>
-      <div id="areaC">
-        <button id="buttonC">C</button>
-      </div>
-      <div id="areaD">
-        <button id="buttonD">D</button>
-      </div>
-    </div>
-  );
+      {answers.map((answer) => (
+        <tr key={answer.answer}>
+          <td>
+            <button onClick={() => setUserClick("correct")} id="areaA">
+              {answer.correct_answer}
+            </button>
+          </td>
+          <td>
+            <button onClick={() => setUserClick("incorrect")} id="areaB">
+              {answer.incorrect_answers[0]}
+            </button>
+          </td>
+          <td>
+            <button onClick={() => setUserClick("incorrect")} id="areaC">
+              {answer.incorrect_answers[1]}
+            </button>
+          </td>
+          <td>
+            <button onClick={() => setUserClick("incorrect")} id="areaD">
+              {answer.incorrect_answers[2]}
+            </button>
+          </td>
+        </tr>
+      ))}
+    </div>);
 }

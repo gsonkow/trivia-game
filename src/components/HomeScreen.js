@@ -21,8 +21,20 @@ export default function HomeScreen({ setPage, setGameType }) {
           }}>Sports</button>
         <button onClick={() => {
           setPage("Game")
-          setGameType("Movies")
-          }}>Movies</button>
+          setGameType(14)
+          }}>Television</button>
+        <button onClick={() => {
+          setPage("Game")
+          setGameType(15)
+          }}>Video Games</button>
+        <button onClick={() => {
+          setPage("Game")
+          setGameType(23)
+          }}>History</button>       
+        <button onClick={() => {
+          setPage("Game")
+          setGameType(27)
+          }}>Animals</button>                   
       </div>
     </div>
     );

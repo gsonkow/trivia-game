@@ -1,7 +1,12 @@
-export default function Question() {
+import "./Game.css";
+import { useEffect, useState } from "react";
+
+export default function Question({ answers }) {
   return (
     <div className="Question">
-      <h2> This is a question</h2>
+      {answers.map((answer) => (
+        <h1>{answer.question}</h1>
+      ))}
     </div>
   );
 }
