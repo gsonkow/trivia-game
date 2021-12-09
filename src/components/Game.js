@@ -12,7 +12,7 @@ export default function Game({ setPage, gameType }) {
   const [userClick, setUserClick] = useState([]);
   const [answers, setAnswers] = useState([]);
   useEffect(() => {
-    const url = `https://opentdb.com/api.php?amount=1&category=21&type=multiple`;
+    const url = `https://opentdb.com/api.php?amount=1&category=${gameType}&type=multiple`;
     fetch(url)
       .then((response) => response.json())
       .then((response) => setAnswers(response.results));
