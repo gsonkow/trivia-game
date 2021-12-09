@@ -17,7 +17,7 @@ export default function Game({ setPage, gameType }) {
       .then((response) => response.json())
       .then((response) => setAnswers(response.results));
   }, []);
-
+  console.log("test");
   // useEffect(() => {
   //   fetch('https://opentdb.com/api_token.php?command=request')
   //     .then((r) => r.json())
