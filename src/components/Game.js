@@ -32,7 +32,7 @@ export default function Game({ setPage, gameType }) {
       <Header />
       <Question answers={answers} />
       <Image />
-      <Grid answers={answers} setUserClick={setUserClick}/>
+      <Grid answers={answers} setUserClick={setUserClick} setPage={setPage}/>
     </div>
   );
 }

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function Grid({ answers, setUserClick }) {
+export default function Grid({ answers, setUserClick, setPage }) {
   return (
     <div className="answerChoices">
       {answers.map((answer) => (
@@ -11,17 +11,17 @@ export default function Grid({ answers, setUserClick }) {
             </button>
           </td>
           <td>
-            <button onClick={() => setUserClick("incorrect")} id="areaB">
+            <button onClick={() => setPage("End")} id="areaB">
               {answer.incorrect_answers[0]}
             </button>
           </td>
           <td>
-            <button onClick={() => setUserClick("incorrect")} id="areaC">
+            <button onClick={() => setPage("End")} id="areaC">
               {answer.incorrect_answers[1]}
             </button>
           </td>
           <td>
-            <button onClick={() => setUserClick("incorrect")} id="areaD">
+            <button onClick={() => setPage("End")} id="areaD">
               {answer.incorrect_answers[2]}
             </button>
           </td>
