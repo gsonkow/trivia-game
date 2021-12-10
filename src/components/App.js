@@ -26,6 +26,11 @@ export default function App() {
             <button onClick={() => setPage("Home")}>Home</button>
             <button>Play Again</button>
           </div>
+        : page == "Correct" ?
+          <div>
+          <h1>Good Job</h1>
+          <button onClick={() => setPage("Game")}>Next Question</button>
+          </div>
         : <div>Bad Page State</div>
       }
     </div>
