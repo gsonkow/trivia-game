@@ -6,7 +6,7 @@ export default function Grid({ answers, setUserClick, setPage, score, setScore }
       {answers.map((answer) => (
         <tr key={answer.answer}>
           <td>
-            <button onClick={() => (setScore(score++).then(setPage("correct")))} id="areaA">
+            <button onClick={() => {setScore(score + 1); setPage("Correct"); }}  id="areaA">
               {answer.correct_answer}
             </button>
           </td>

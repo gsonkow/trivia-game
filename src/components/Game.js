@@ -5,9 +5,8 @@ import Image from "./Image.js";
 import Question from "./Question.js";
 import Header from "./Header.js";
 
-export default function Game({ setPage, gameType }) {
+export default function Game({ setPage, gameType, score, setScore}) {
   const [mistake, setMistake] = useState(false);
-  const [score, setScore] = useState(0);
   const [token, setToken] = useState("");
   const [questionData, setQuestionData] = useState("");
   const [userClick, setUserClick] = useState([]);
