@@ -7,6 +7,7 @@ import Header from "./Header.js";
 
 export default function Game({ setPage, gameType }) {
   const [mistake, setMistake] = useState(false);
+  const [score, setScore] = useState(0);
   const [token, setToken] = useState("");
   const [questionData, setQuestionData] = useState("");
   const [userClick, setUserClick] = useState([]);
@@ -24,15 +25,15 @@ export default function Game({ setPage, gameType }) {
   //     .catch((e) => setQuestionData(null));
 
   //   var url = `https://opentdb.com/api.php?amount=1&category=${gameType}&type=multiple&token=${token}`
-  // }, [gameType, token]) 
-  
+  // }, [gameType, token])
+
   return (
     <div className="Game">
       <button onClick={() => setPage("Home")}>Home</button>
-      <Header />
+      <Header score={score}/>
       <Question answers={answers} />
       <Image />
-      <Grid answers={answers} setUserClick={setUserClick} setPage={setPage}/>
+      <Grid answers={answers} setUserClick={setUserClick} setPage={setPage} score={score} setScore={setScore}/>
     </div>
   );
 }

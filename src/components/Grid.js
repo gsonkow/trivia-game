@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 
-export default function Grid({ answers, setUserClick, setPage }) {
+export default function Grid({ answers, setUserClick, setPage, score, setScore }) {
   return (
     <div className="answerChoices">
       {answers.map((answer) => (
         <tr key={answer.answer}>
           <td>
-            <button onClick={() => setUserClick("correct")} id="areaA">
+            <button onClick={() => setScore(score++)/*setUserClick("correct")*/} id="areaA">
               {answer.correct_answer}
             </button>
           </td>
