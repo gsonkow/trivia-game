@@ -1,7 +1,6 @@
-import "./Game.css";
+import "./App.css";
 import { useState, useEffect } from "react";
 import Grid from "./Grid.js";
-import Image from "./Image.js";
 import Question from "./Question.js";
 import Header from "./Header.js";
 
@@ -28,10 +27,8 @@ export default function Game({ setPage, gameType, score, setScore}) {
 
   return (
     <div className="Game">
-      <button onClick={() => setPage("Home")}>Home</button>
-      <Header score={score}/>
+      <Header score={score} setPage={setPage}/>
       <Question answers={answers} />
-      <Image />
       <Grid answers={answers} setUserClick={setUserClick} setPage={setPage} score={score} setScore={setScore}/>
     </div>
   );

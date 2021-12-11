@@ -1,13 +1,54 @@
 .App {
+  font-family: sans-serif;
   text-align: center;
 }
 
-h1 , h3 {
+h1 {
+  font-family: sans-serif;
   text-align: center;
+  display: grid;
+  font-family: "Open Sans", sans-serif;
+  row-gap: 10px;
+  padding: 15px;
+  margin: 20px;
+  border: 3px solid rgb(17, 76, 99);
+  border-radius: 14px;
+  background-color: rgba(217, 243, 226, 0.85);
+  color: rgb(50, 117, 143);
+}
+
+h2 {
+  font-family: sans-serif;
+  text-align: center;
+  display: grid;
+  font-family: "Open Sans", sans-serif;
+  color: rgb(50, 117, 143);
+}
+
+h3 {
+  font-family: sans-serif;
+  text-align: center;
+  display: grid;
+  font-family: "Open Sans", sans-serif;
+  row-gap: 10px;
+  padding: 15px;
+  margin: 20px;
+  border: 3px solid rgb(17, 76, 99);
+  border-radius: 14px;
+  background-color: rgba(217, 243, 226, 0.85);
+  color: rgb(50, 117, 143);
 }
 
 #gameList {
-  grid-template-columns: auto auto;
+  display: grid;
+  grid-template-columns: auto;
+  row-gap: 10px;
+  padding: 15px;
+  margin: 20px;
+  border: 3px solid rgb(17, 76, 99);
+  border-radius: 14px;
+  background-color: rgba(217, 243, 226, 0.85);
+  color: rgb(50, 117, 143);
 }
 
 .endScreen {
@@ -26,7 +67,7 @@ h1 , h3 {
   color: rgb(50, 117, 143);
 }
 
-#congrats {
+#Title {
   border: 3px solid rgb(17, 76, 99);
   border-radius: 14px;
   padding: 12px;
@@ -53,4 +94,59 @@ button {
 
 button:hover {
   background-color: rgb(91, 136, 98);
+}
+
+.Game {
+  font-family: sans-serif;
+  text-align: center;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto;
+  row-gap: 10px;
+  padding: 15px;
+  margin: 20px;
+  border: 3px solid rgb(17, 76, 99);
+  border-radius: 14px;
+  background-color: rgba(217, 243, 226, 0.85);
+  color: rgb(50, 117, 143);
+}
+
+#answerChoices {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto auto auto;
+  row-gap: 10px;
+  padding: 15px;
+  margin: 20px;
+  background-color: rgba(217, 243, 226, 0.85);
+  color: rgb(50, 117, 143);
+}
+
+.gameHeader {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto;
+}
+
+.gameHeader button {
+  margin: 20px;
+}
+
+#scoreHeader {
+  text-align: right;
+  float: right;
+}
+
+.correctScreen {
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  row-gap: 10px;
+  padding: 15px;
+  margin: 20px;
+  border: 3px solid rgb(17, 76, 99);
+  border-radius: 14px;
+  background-color: rgba(217, 243, 226, 0.85);
+  color: rgb(50, 117, 143);
 }

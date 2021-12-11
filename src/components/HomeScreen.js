@@ -8,9 +8,9 @@ import './App.css';
 export default function HomeScreen({ setPage, setGameType }) {
     return (
     <div>
-      <h1>Welcome to Trivia!</h1>
-      <h3>Pick a category:</h3>
+      <h1 id="Title">Welcome to Trivia!</h1>
       <div id="gameList">
+        <h2>Pick a category:</h2>
         <button onClick={() => {
           setPage("Game")
           setGameType(21)

@@ -20,15 +20,15 @@ export default function App() {
           </div>
         : page == "End" ?
           <div className="endScreen">
-           <h1 id="congrats">Congrats</h1>
+           <h1 id="Title">Congrats</h1>
            <h2 id="score">Score: {score}</h2>
            <h2 id="score">Personal High Score: </h2>
-            <button onClick={() => setPage("Home")}>Home</button>
+           <button onClick={() => {setScore(0); setPage("Home"); }}>Home</button>
           </div>
         : page == "Correct" ?
-          <div>
-          <Header score={score}/>
-          <h1>Good Job</h1>
+          <div className="correctScreen">
+          <Header score={score} setPage={setPage}/>
+          <h1 id="Title">Good Job</h1>
           <button onClick={() => setPage("Game")}>Next Question</button>
           </div>
         : <div>Bad Page State</div>

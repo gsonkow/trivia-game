@@ -2,30 +2,22 @@ import { useState, useEffect } from "react";
 
 export default function Grid({ answers, setUserClick, setPage, score, setScore }) {
   return (
-    <div className="answerChoices">
+    <div>
       {answers.map((answer) => (
-        <tr key={answer.answer}>
-          <td>
-            <button onClick={() => {setScore(score + 1); setPage("Correct"); }}  id="areaA">
+        <div id="answerChoices" key={answer.answer}>
+            <button onClick={() => {setScore(score + 1); setPage("Correct"); }}>
               {answer.correct_answer}
             </button>
-          </td>
-          <td>
-            <button onClick={() => setPage("End")} id="areaB">
+            <button onClick={() => setPage("End")}>
               {answer.incorrect_answers[0]}
             </button>
-          </td>
-          <td>
-            <button onClick={() => setPage("End")} id="areaC">
+            <button onClick={() => setPage("End")}>
               {answer.incorrect_answers[1]}
             </button>
-          </td>
-          <td>
-            <button onClick={() => setPage("End")} id="areaD">
+            <button onClick={() => setPage("End")}>
               {answer.incorrect_answers[2]}
             </button>
-          </td>
-        </tr>
+        </div>
       ))}
     </div>);
 }
