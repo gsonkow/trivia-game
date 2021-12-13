@@ -77,8 +77,9 @@ h3 {
 
 #score {
   display: grid;
-  grid-template-rows: 5px;
+  grid-template-rows: auto;
   text-align: left;
+  margin: 12px;
 }
 
 button {
