@@ -4,19 +4,32 @@ import Game from "./Game";
 import {SignIn, SignOut, useAuthentication} from "../services/authService"
 import './App.css';
 import Header from "./Header";
+import { fetchScore } from "../services/scoreService";
 
 export default function App() {
   const [page, setPage] = useState("Home")
   const [gameType, setGameType] = useState(0);
   const [score, setScore] = useState(0);
+  const [highScore, setHighScore] = useState(0);
   const user = useAuthentication();
+
+  // useEffect(() => {
+  //   setHighScore(fetchScore())
+  // }, [setPage])
 
   return (
     <div>
       {
-        !user ? <button>sign in</button> 
+        !user ? 
+          <div className="SignIn">
+            <h1>Let's play Trivia!</h1>
+            <SignIn/>
+          </div>
         : page == "Home" ? 
+          <div>
           <HomeScreen setPage={setPage} setGameType={setGameType}/> 
+          <SignOut/>
+          </div>
         : page == "Game" ?
           <div>
            <Game setPage={setPage} gameType={gameType} score={score} setScore={setScore}/>
@@ -25,7 +38,7 @@ export default function App() {
           <div className="endScreen">
            <h1 id="Title">Congrats</h1>
            <h2 id="score">Score: {score}</h2>
-           <h2 id="score">Personal High Score: </h2>
+           <h2 id="score">High Score: {highScore}</h2>
            <button onClick={() => {setScore(0); setPage("Home"); }}>Home</button>
           </div>
         : page == "Correct" ?
