@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import HomeScreen from "./HomeScreen";
 import Game from "./Game";
+import {SignIn, SignOut, useAuthentication} from "../services/authService"
 import './App.css';
 import Header from "./Header";
 
@@ -8,11 +9,13 @@ export default function App() {
   const [page, setPage] = useState("Home")
   const [gameType, setGameType] = useState(0);
   const [score, setScore] = useState(0);
+  const user = useAuthentication();
 
   return (
     <div>
       {
-        page == "Home" ? 
+        !user ? <button>sign in</button> 
+        : page == "Home" ? 
           <HomeScreen setPage={setPage} setGameType={setGameType}/> 
         : page == "Game" ?
           <div>
